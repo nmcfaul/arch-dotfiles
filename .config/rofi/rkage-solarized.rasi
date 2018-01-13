@@ -1,0 +1,16 @@
+/** rkage-solarized-dark theme **/
+
+* {
+    background:             #002b3620;
+    normal-background:      @background;
+}
+#window {
+    background-color: @background;
+    border:           1;
+    padding:          10;
+}
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+
