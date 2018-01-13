@@ -1,0 +1,17 @@
+
+
+
+.config/*
+
+!.config/dunst
+!.config/gtk-2.0
+!.config/gtk-3.0
+!.config/i3
+!.config/i3lock
+!.config/polybar
+!.config/rofi
+!.config/termite
+!.config/wallpapers
+
+!.config/compton.conf
+!.config/nvim/init.vim
