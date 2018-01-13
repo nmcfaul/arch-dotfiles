@@ -1,0 +1,4 @@
+#include ".Xresources.d/colours"
+#include ".Xresources.d/rofi"
+#include ".Xresources.d/rxvt-unicode"
+
