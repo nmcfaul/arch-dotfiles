@@ -389,7 +389,7 @@ bindsym $mod+p exec --no-startup-id $HOME/.config/i3/scripts/polybar.sh
 
 
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/res/wallpaper.png &
-exec --no-startup-id compton -bcCG --shadow-exclude '!focused' &
+exec --no-startup-id compton -b &
 
 exec_always --no-startup-id $HOME/.config/i3/scripts/polybar.sh &
 
