@@ -233,7 +233,7 @@ bindsym $mod+Escape exec $HOME/.config/i3/scripts/logout.sh
 
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/redrain.jpg &
 exec --no-startup-id compton -b &
-exec_always --no-startup-id $HOME/.config/i3/scripts/polybar.sh &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id unclutter --timeout 3 -b &
