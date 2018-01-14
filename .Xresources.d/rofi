@@ -1,1 +1,5 @@
-/home/nick/.cache/wal/colors-rofi.Xresources
+! Rofi
+rofi.color-window: #36312f, #36312f, #CE6F52
+rofi.color-normal: #36312f, #e5c1ab, #36312f, #CE6F52, #36312f
+rofi.color-active: #36312f, #e5c1ab, #36312f, #CE6F52, #36312f
+rofi.color-urgent: #36312f, #CC554F,     #36312f, #CC554F,  #e5c1ab
