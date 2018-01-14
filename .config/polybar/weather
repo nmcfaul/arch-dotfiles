@@ -1,38 +1,16 @@
-#!/bin/sh
+#!/bin/python
 
-get_icon() {
-    case $1 in
-        01d) icon="";;
-        01n) icon="";;
-        02d) icon="";;
-        02n) icon="";;
-        03*) icon="";;
-        04*) icon="";;
-        09d) icon="";;
-        09n) icon="";;
-        10d) icon="";;
-        10n) icon="";;
-        11d) icon="";;
-        11n) icon="";;
-        13d) icon="";;
-        13n) icon="";;
-        50d) icon="";;
-        50n) icon="";;
-        *) icon="";
-    esac
+import  urllib.request, json
 
-    echo $icon
-}
+api_key = "771dd1bd80c16d56411ff27fa8ec0cf3"
+map_lat = "43.5137"
+map_long = "-79.8828"
+units = "ca"
+unit_key = "C"
 
-KEY="742eb36db69793fbc3be9226962cc379"
-CITY="6092122"
-UNITS="metric"
-SYMBOL="°"
+weather = eval(str(urllib.request.urlopen("https://api.darksky.net/forecast/{}/{},{}?units={}&exclude=minutely,hourly,daily,alerts,flags".format(api_key, map_lat, map_long, units)).read())[2:-1])
 
-weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
-# weather=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
+summary = weather["currently"]["summary"]
+temperature = int(float(weather["currently"]["temperature"]))
 
-weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
-weather_icon=$(echo "$weather" | jq -r ".weather[0].icon")
-
-echo "$(get_icon "$weather_icon")" $weather_temp$SYMBOL
+print("%s, %i °%s" % (summary, temperature, unit_key))
