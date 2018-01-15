@@ -2,7 +2,7 @@
 URxvt.termName: rxvt-256color
 
 !! font/ui settings
-URxvt*font: xft:DroidSansMono Nerd Font:size=9:antialias=true:hinting=true
+URxvt*font: xft:UbuntuMono Nerd Font:size=10
 URxvt.letterSpace: -1
 
 URxvt.intensityStyles: false
@@ -14,4 +14,3 @@ URxvt.internalBorder: 15
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-

@@ -1,25 +1,25 @@
 [global]
     monitor = 0
-    follow = mouse
-    geometry = "300x5-20+35"
+    follow = none
+    geometry = "597x25+100+50"
     indicate_hidden = yes
     shrink = yes
     transparency = 10
-    notification_height = 0
+    notification_height = 30
 
-    separator_height = 0
+    separator_height = 2
     padding = 8
     horizontal_padding = 8
-    separator_color = frame
+    separator_color = auto
     sort = yes
     idle_threshold = 120
 
-    font = Iosevka Medium 9
-    line_height = 0
-    markup = full
-    format = "<b>%s</b>\n%b"
+    font =  IBM Plex Sans 10
+    line_height = 5
+    markup = no
+    format = "%s\n%b"
     frame_width = 2
-    frame_color = "#e5af8e"
+    frame_color = "#DFE1E8"
     alignment = left
 
     show_age_threshold = 60
@@ -54,17 +54,17 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#36312f"
-    foreground = "#e5af8e"
-    timeout = 5
+    background = "#1F2326"
+    foreground = "#DFE1E8"
+    timeout = 10
 
 [urgency_normal]
-    background = "#36312f"
-    foreground = "#e5af8e"
-    timeout = 20
+    background = "#1F2326"
+    foreground = "#DFE1E8"
+    timeout = 10
 
 [urgency_critical]
-    background = "#36312f"
-    foreground = "#e5af8e"
+    background = "#1F2326"
+    foreground = "#DFE1E8"
     frame_color = "#ff0000"
     timeout = 20

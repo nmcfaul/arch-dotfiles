@@ -54,17 +54,6 @@ mouse_warping none
 new_window  none
 new_float   none
 
-workspace 1 output $firstMonitor
-workspace 2 output $firstMonitor
-workspace 3 output $firstMonitor
-workspace 4 output $firstMonitor
-workspace 5 output $firstMonitor
-workspace 6 output $firstMonitor
-workspace 7 output $firstMonitor
-workspace 8 output $firstMonitor
-workspace 9 output $firstMonitor
-workspace 10 output $firstMonitor
-
 ### switch workspaces
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -230,6 +219,9 @@ bindsym $mod+Return exec termite
 # logout.sh
 bindsym $mod+Escape exec $HOME/.config/i3/scripts/logout.sh
 
+
+## application settings
+for_window [class="URxvt" instance="floating"] floating enable
 
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/redrain.jpg &
 exec --no-startup-id compton -b &

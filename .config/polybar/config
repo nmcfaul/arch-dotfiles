@@ -4,7 +4,6 @@ include-file = $HOME/.config/polybar/modules.conf
 
 [bar/left]
 inherit = bar/master
-
 monitor = ${env:MONITOR:HDMI-0}
 
 ; modules-left = menu redshift caffeine i3-workspaces weather
@@ -12,46 +11,12 @@ monitor = ${env:MONITOR:HDMI-0}
 ; modules-right = pkg memory temp cpu eth volume1 time rofi
 modules-left = menu i3-workspaces weather
 modules-center =
-modules-right = memory temperature cpu network volume date rofi
+modules-right = pkg memory temperature cpu network volume date rofi
 
-;tray-position = left
-;tray-padding = 2
-;tray-transparent = false
-
-
-
-
-
-[bar/top-right]
+[bar/right]
+inherit = bar/master
 monitor = ${env:MONITOR:DVI-D-0}
 
-font-0 = Wuncon Siji:pixelsize=10;2
-font-1 = xos4 Terminus:size=12;2
-font-2 = SauceCodePro Nerd Font Mono:pixelsize=26;7
-font-3 = xos4 Terminess Powerline:size=28;4
-
-override-redirect = false
-bottom = false
-width = 100%
-height = 26
-offset-x = 0
-offset-y = 0
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-border-bottom-size = 1
-
-spacing = 0
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
-
-modules-left = i3 arrow-right xwindow
+modules-left = i3-workspaces
 modules-center =
-modules-right = arrow-left rofi
-
-fixed-center = false
-
-tray-position =
+modules-right = rofi
