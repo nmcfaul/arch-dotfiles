@@ -1,5 +1,6 @@
 [options]
-font = Droid Sans Mono Slashed for Powerline 9
+font = Droid Sans Mono Slashed for Powerline 10
+mouse_autohide = true
 browser = xdg-open
 hyperlinks = true
 scrollback_lines = -1
@@ -8,24 +9,48 @@ scroll_on_output = false
 urgent_on_bell = true
 
 [colors]
-foreground = #e5c1ab
-background = #36312f
+background = rgba(38,50,56,.92)
+foreground = #eeffff
+cursor = #eeffff
+cursor_foreground = #138D75
 
-color0 = #36312f
-color1 = #CC554F
-color2 = #CE6F52
-color3 = #E76157
-color4 = #EC7253
-color5 = #A9896E
-color6 = #F58E54
-color7 = #e5c1ab
-color8 = #a08777
-color9 = #CC554F
-color10 = #CE6F52
-color11 = #E76157
-color12 = #EC7253
-color13 = #A9896E
-color14 = #F58E54
-color15 = #e5c1ab
+# black
+color0 = #263238
+color8 = #546e7a
+
+# white
+color7 = #eeffff
+color15 = #ffffff
+
+# Red
+color1 = #f07178
+color9 = #f07178
+
+# green
+color2 = #c3e88d
+color10 = #c3e88d
+
+# yellow
+color3 = #ffcb6b
+color11 = #ffcb6b
+
+# blue
+color4 = #82aaff
+color12 = #82aaff
+
+# purple
+color5 = #c792ea
+color13 = #c792ea
+
+# teal
+color6 = #89ddff
+color14 = #89ddff
+
+color16 = #f78c6c
+color17 = #ff5370
+color18 = #2e3c43
+color19 = #314549
+color20 = #b2ccd6
+color21 = #eeffff
 
 # vim: ft=dosini cms=#%s

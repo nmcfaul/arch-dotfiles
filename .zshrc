@@ -23,7 +23,7 @@ autoload -Uz compinit
 compinit
 
 # Aliases
-source ~/.aliases
+source $HOME/.aliases
 
 #####################
 ###### ANTIGEN ######

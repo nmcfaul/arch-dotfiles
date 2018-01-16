@@ -1,4 +1,3 @@
-#include ".Xresources.d/colours"
+#include ".Xresources.d/base16-material"
 #include ".Xresources.d/rofi"
 #include ".Xresources.d/rxvt-unicode"
-

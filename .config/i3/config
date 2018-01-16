@@ -5,6 +5,11 @@
 set_from_resource $bg       background #f0f0f0
 set_from_resource $fg       foreground #f0f0f0
 
+set $bg-colour              #2f343f
+set $inactive-bg-colour     #2f343f
+set $text-colour            #f3f4f5
+set $inactive-text-colour   #676e7d
+set $urgent-bg-colour       #e53935
 
 ## colors and font
 font pango:SF Pro 10
@@ -192,7 +197,7 @@ bindsym $alt+v exec rofi -modi "clipboard:/usr/bin/greenclip print" -show clipbo
 bindsym $alt+Tab exec rofi -show window -width 50 -hide-scrollbar
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # logout.sh
 bindsym $mod+Escape exec $HOME/.config/i3/scripts/logout.sh
@@ -205,9 +210,10 @@ assign [class="^Firefox$"] workspace 2
 
 ## Application Settings
 for_window [class="URxvt" instance="floating"] floating enable
+for_window [class="Firefox" title=".*\(Private Browsing\).*"] move to workspace 5
 
 
-exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/stars-and-moon.png &
+exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/rick-and-morty.jpg &
 exec --no-startup-id compton -b &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 

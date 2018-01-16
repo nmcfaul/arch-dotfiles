@@ -1,5 +1,3 @@
-! X colors.
-
 ! special
 *.foreground:   #c0c5ce
 *.background:   #2b303b
@@ -36,6 +34,3 @@
 ! white
 *.color7:   #c0c5ce
 *.color15:  #eff1f5
-
-! Set depth to make transparency work.
-URxvt*depth: 32

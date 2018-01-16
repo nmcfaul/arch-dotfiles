@@ -15,7 +15,7 @@ modules-right = pkg volume network powermenu
 
 [bar/right]
 inherit = bar/master
-monitor = ${env:MONITOR:DVI-D-0}
+monitor = ${env:MONITOR:DVI-I-1}
 
 modules-left = i3-workspaces xwindow
 modules-center =
