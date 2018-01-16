@@ -9,14 +9,14 @@ monitor = ${env:MONITOR:HDMI-0}
 ; modules-left = menu redshift caffeine i3-workspaces weather
 ; modules-center = music2
 ; modules-right = pkg memory temp cpu eth volume1 time rofi
-modules-left = menu i3-workspaces weather
-modules-center =
-modules-right = pkg memory temperature cpu network volume date rofi
+modules-left = i3-workspaces xwindow
+modules-center = clock
+modules-right = pkg volume network powermenu
 
 [bar/right]
 inherit = bar/master
 monitor = ${env:MONITOR:DVI-D-0}
 
-modules-left = i3-workspaces
+modules-left = i3-workspaces xwindow
 modules-center =
-modules-right = rofi
+modules-right =

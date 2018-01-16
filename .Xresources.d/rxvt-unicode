@@ -2,8 +2,8 @@
 URxvt.termName: rxvt-256color
 
 !! font/ui settings
-URxvt*font: xft:UbuntuMono Nerd Font:size=10
-URxvt.letterSpace: -1
+URxvt*font: xft:Fantasque Sans Mono:size=10
+!!URxvt.letterSpace: -1
 
 URxvt.intensityStyles: false
 URxvt.scrollBar: false

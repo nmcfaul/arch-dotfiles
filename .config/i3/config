@@ -24,14 +24,8 @@ set $mod Mod4
 
 set $editor urxvt
 
-### vim directional keys
-set $up j
-set $down k
-set $left h
-set $right l
-
 ### default gap settings
-set $default_gaps_inner 15
+set $default_gaps_inner 30
 set $default_gaps_outer 0
 
 ### monitor definitions
@@ -51,8 +45,8 @@ mouse_warping none
 #floating_minimum_size -1 x -1
 #floating_maximum_size -1 x -1
 
-new_window  none
-new_float   none
+new_window pixel 2
+new_float  pixel 2
 
 ### switch workspaces
 bindsym $mod+1 workspace 1
@@ -102,23 +96,11 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-### change focus with vi keybindings
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
-
 ### move focused window with cursor keys
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-### move focused window with vi keybindings
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
 
 ### easy workspace navigation
 bindsym $mod+Ctrl+Right workspace next
@@ -130,8 +112,8 @@ bindsym $mod+x move workspace to output right
 bindsym $mod+z move container to output right
 
 ### split in horizontal / vertical orientation, send a desktop notification
-bindsym $mod+b split h; exec notify-send 'tile horizontally'
-bindsym $mod+v split v; exec notify-send 'tile vertically'
+bindsym $mod+h split h; exec notify-send 'Tile horizontally'
+bindsym $mod+v split v; exec notify-send 'Tile vertically'
 
 ### change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed
@@ -148,20 +130,16 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 ### resize window (you can also use the mouse for that)
-mode "resize" {
+mode "" {
         bindsym Down resize grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
         bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym $down resize grow width 5 px or 5 ppt
-        bindsym $up resize shrink height 5 px or 5 ppt
-        bindsym $right resize grow height 5 px or 5 ppt
-        bindsym $left resize shrink width 5 px or 5 ppt
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode ""
 
 ### adjust gaps on-the-fly
 set $mode_gaps Gaps: (O)uter, (I)nner
@@ -214,16 +192,22 @@ bindsym $alt+v exec rofi -modi "clipboard:/usr/bin/greenclip print" -show clipbo
 bindsym $alt+Tab exec rofi -show window -width 50 -hide-scrollbar
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec urxvt
 
 # logout.sh
 bindsym $mod+Escape exec $HOME/.config/i3/scripts/logout.sh
 
 
-## application settings
+## Window Assignments
+assign [class="^Thunar$"] workspace 3
+assign [class="^Atom$"] workspace 7
+assign [class="^Firefox$"] workspace 2
+
+## Application Settings
 for_window [class="URxvt" instance="floating"] floating enable
 
-exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/redrain.jpg &
+
+exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/stars-and-moon.png &
 exec --no-startup-id compton -b &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 
