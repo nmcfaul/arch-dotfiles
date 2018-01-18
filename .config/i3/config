@@ -190,20 +190,17 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 # dmenu control
 bindsym $alt+r exec rofi -show run -hide-scrollbar
-bindsym $alt+v exec rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -width 75 -hide-scrollbar
-bindsym $alt+Tab exec rofi -show window -width 50 -hide-scrollbar
+bindsym $alt+v exec rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -hide-scrollbar
+bindsym $alt+Tab exec rofi -show window -hide-scrollbar
 
-# start a terminal
-bindsym $mod+Return exec termite
-
-# logout.sh
-bindsym $mod+Escape exec $HOME/.config/i3/scripts/logout.sh
-
+# rofi
+bindsym $mod+Return exec rofi -show drun -display-drun ":"
 
 ## Window Assignments
 assign [class="^Thunar$"] workspace 3
 assign [class="^Atom$"] workspace 7
 assign [class="^Firefox$"] workspace 2
+assign [class="^Rambox$"] workspace 4
 
 ## Application Settings
 for_window [class="URxvt" instance="floating"] floating enable
@@ -211,9 +208,9 @@ for_window [class="Firefox" title=".*\(Private Browsing\).*"] move to workspace 
 
 
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/rick-and-morty.jpg &
-exec --no-startup-id compton -b &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 
+exec --no-startup-id compton -b &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id unclutter --timeout 3 -b &
 exec --no-startup-id dunst &

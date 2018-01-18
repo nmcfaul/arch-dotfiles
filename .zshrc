@@ -22,14 +22,11 @@ zstyle :compinstall filename '/home/nick/.zshrc'
 autoload -Uz compinit
 compinit
 
-# Aliases
-source $HOME/.aliases
-
 #####################
 ###### ANTIGEN ######
 #####################
 
-source ~/.antigen/antigen.zsh
+source $HOME/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -53,3 +50,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell antigen that you're done.
 antigen apply
+
+# Aliases
+source $HOME/.aliases
+

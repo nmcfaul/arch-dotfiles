@@ -1,5 +1,27 @@
-rofi.theme: .config/rofi/topbar.rasi
+rofi.color-enabled: true
 
-rofi.terminal:      urxvt
+!                   background      border          separator
+rofi.color-window:  argb:ee292f37,  argb:0292f370,  #89ddff
+
+!                  bg             fg       bgalt          hlbg           hlfg
+rofi.color-normal: argb:00000000, #ffffff, argb:00000000, argb:00000000, #89ddff
+rofi.color-active: argb:00000000, #ffffff, argb:00000000, argb:00000000, #ffffff
+rofi.color-urgent: argb:00000000, #ffffff, argb:00000000, argb:00000000, #ffffff
+
+rofi.font: SF Pro Display 20
+rofi.eh: 1
+rofi.line-margin: 20
+rofi.modi: window,ssh,run,drun
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.lines: 5
+rofi.width: 100
+rofi.padding: 650
+rofi.bw: 0
+rofi.auto-select: true
+rofi.terminal: termite
+rofi.show-icons: true
+rofi.drun-icon-theme: Papirus
+
 rofi.ssh-client:    ssh
 rofi.ssh-command:   ${terminal} -e "{ssh-client} {host}"
