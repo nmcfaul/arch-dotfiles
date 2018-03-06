@@ -13,10 +13,12 @@ modules-left = i3-workspaces xwindow
 modules-center = clock
 modules-right = pkg volume network powermenu
 
+tray-position = right
+
 [bar/right]
 inherit = bar/master
 monitor = ${env:MONITOR:DVI-I-1}
 
 modules-left = i3-workspaces xwindow
 modules-center =
-modules-right =
+modules-right = time

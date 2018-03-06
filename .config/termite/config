@@ -9,7 +9,7 @@ scroll_on_output = false
 urgent_on_bell = true
 
 [colors]
-background = rgba(38,50,56,.92)
+background = rgba(17,27,34,.92)
 foreground = #eeffff
 cursor = #138D75
 

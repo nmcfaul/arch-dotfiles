@@ -2,8 +2,8 @@
 # i3 config file (v4)
 
 ## map colours from resources files
-set $bg-colour              #263238
-set $inactive-bg-colour     #263238
+set $bg-colour              #202731
+set $inactive-bg-colour     #202731
 set $text-colour            #eeffff
 set $inactive-text-colour   #546e7a
 set $urgent-bg-colour       #ff5370
@@ -24,7 +24,7 @@ client.background       $bg-colour
 set $alt Mod1
 set $mod Mod4
 
-set $editor urxvt
+set $editor termite
 
 ### default gap settings
 set $default_gaps_inner 30
@@ -199,13 +199,13 @@ bindsym $mod+Return exec rofi -show drun -display-drun ":"
 ## Window Assignments
 assign [class="^Thunar$"] workspace 3
 assign [class="^Atom$"] workspace 7
-assign [class="^Firefox$"] workspace 2
+assign [class="^Firefox$|^Google-chrome$"] workspace 2
 assign [class="^Rambox$"] workspace 4
 
 ## Application Settings
 for_window [class="URxvt" instance="floating"] floating enable
 for_window [class="Firefox" title=".*\(Private Browsing\).*"] move to workspace 5
-for_window [class="^Avahi|^System-config|^Gnome-disks$|^Nm-connection-editor$|^Seahorse$"] floating enable
+for_window [class="^Avahi|^System-config|^Gnome-disks$|^Nm-connection-editor$|^Seahorse$|^battle.net.exe$|^etcher"] floating enable
 
 exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/rick-and-morty.jpg &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
@@ -215,5 +215,5 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id unclutter --timeout 3 -b &
 exec --no-startup-id dunst &
 exec --no-startup-id thunar --daemon &
-exec --no-startup-id udiskie -Nt2 &
+#exec --no-startup-id udiskie -Nt2 &
 exec --no-startup-id greenclip daemon &
