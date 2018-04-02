@@ -1,38 +1,41 @@
 # vim:filetype=i3
 # i3 config file (v4)
 
-## map colours from resources files
-set $bg-colour              #202731
-set $inactive-bg-colour     #202731
-set $text-colour            #eeffff
-set $inactive-text-colour   #546e7a
-set $urgent-bg-colour       #ff5370
-
 ## colors and font
-font pango:SF Pro Display 12
+font pango:Overpass 11
 
-client.focused          $bg-colour          $bg-colour          $text-colour          $bg-colour  $bg-colour
-client.focused_inactive $inactive-bg-colour $inactive-bg-colour $inactive-text-colour $bg-colour  $bg-colour
-client.unfocused        $inactive-bg-colour $inactive-bg-colour $inactive-text-colour $bg-colour  $bg-colour
-client.urgent           $urgent-bg-colour   $bg-colour          $text-colour          $bg-colour  $bg-colour
-client.placeholder      $bg-colour          $bg-colour          $text-colour          $bg-colour  $bg-colour
+set $bgdark     #2E3440
+set $bglight    #4C566A
+set $fgdark     #D8DEE9
+set $fglight    #ECEFF4
+set $inactive   #88C0D0
+set $accent     #5E81AC
+set $urgent     #BF616A
 
-client.background       $bg-colour
+# class                 border    backgr.   text        indicator   child_border
+client.focused          $bglight  $bglight  $fglight    $accent     $bglight
+client.focused_inactive $bgdark   $bgdark   $inactive   $inactive   $bgdark
+client.unfocused        $bgdark   $bgdark   $fgdark     $accent     $bgdark
+
+client.urgent           $bgdark   $bgdark   $urgent     $inactive   $bgdark
+client.placeholder      $bgdark   $bgdark   $fgdark     $inactive   $bgdark
+
+client.background       $ffffff
 
 
 ## other variables and modifiers
 set $alt Mod1
 set $mod Mod4
 
-set $editor termite
+set $editor urxvt
 
 ### default gap settings
-set $default_gaps_inner 30
-set $default_gaps_outer 0
+set $default_gaps_inner 10
+set $default_gaps_outer 15
 
 ### monitor definitions
 set $firstMonitor HDMI-0
-set $secondMonitor DVI-D-0
+set $secondMonitor DVI-I-1
 
 
 ## define workspaces and screens
@@ -47,8 +50,8 @@ mouse_warping none
 #floating_minimum_size -1 x -1
 #floating_maximum_size -1 x -1
 
-new_window pixel 2
-new_float  pixel 2
+new_window normal 2 px
+hide_edge_borders smart
 
 ### switch workspaces
 bindsym $mod+1 workspace 1
@@ -203,17 +206,16 @@ assign [class="^Firefox$|^Google-chrome$"] workspace 2
 assign [class="^Rambox$"] workspace 4
 
 ## Application Settings
+for_window [class="Termite|^plexmediaplayer|^Atom|^Google-chrome"] border pixel 2
+
 for_window [class="URxvt" instance="floating"] floating enable
 for_window [class="Firefox" title=".*\(Private Browsing\).*"] move to workspace 5
 for_window [class="^Avahi|^System-config|^Gnome-disks$|^Nm-connection-editor$|^Seahorse$|^battle.net.exe$|^etcher"] floating enable
 
-exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/rick-and-morty.jpg &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-
 exec --no-startup-id compton -b &
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id unclutter --timeout 3 -b &
+exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/lines.jpg &
+
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 exec --no-startup-id dunst &
 exec --no-startup-id thunar --daemon &
-#exec --no-startup-id udiskie -Nt2 &
-exec --no-startup-id greenclip daemon &

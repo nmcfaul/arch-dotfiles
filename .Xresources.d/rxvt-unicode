@@ -3,7 +3,7 @@ URxvt.termName: rxvt-256color
 URxvt*depth: 32
 
 !! font/ui settings
-URxvt*font: xft:DroidSans Mono Nerd Font:size=9
+URxvt*font: xft:UbuntuMono Nerd Font:pixelsize=15
 !!URxvt.letterSpace: -1
 
 URxvt.intensityStyles: false

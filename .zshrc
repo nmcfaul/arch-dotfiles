@@ -1,26 +1,47 @@
-#######################
-###### SETTINGS #######
-#######################
+mainc="2"
+sidec="$((mainc + 8))"
 
-#export TERM="xterm-256color"
-
-# Neovim as the default editor
-export VISUAL="nvim"
-export EDITOR="nvim"
+export PATH="$HOME/go/bin:$PATH"
 
 # History
-HISTFILE=~/.zsh-history
-HISTSIZE=5000
-SAVEHIST=5000
+export HISTSIZE=5000
+export HISTFILE="$HOME/.zsh-history"
+export SAVEHIST=5000
+
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
 
 # Options
 setopt appendhistory autocd nomatch COMPLETE_ALIASES
 unsetopt beep notify
 
-zstyle :compinstall filename '/home/nick/.zshrc'
+# env
+export VISUAL="vim"
+export EDITOR="vim"
+export GREP_COLOR="0;3${mainc}"
 
-autoload -Uz compinit
-compinit
+export VIRSH_DEFAULT_CONNECT_URI="qemu+ssh://root@192.168.30.25/system"
+export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/aks-cluster
+
+#---[colored man]--------------------------------------------------------------
+export LESS_TERMCAP_mb=$(printf "\e[0;3${mainc}m")    # start blink
+export LESS_TERMCAP_md=$(printf "\e[0;3${mainc}m")    # start bold
+export LESS_TERMCAP_so=$(printf "\e[7;3${mainc}m")    # start standout
+export LESS_TERMCAP_us=$(printf "\e[1;4;3${mainc}m")  # start underline
+export LESS_TERMCAP_me=$(printf "\e[0m")              # stop blink, bold
+export LESS_TERMCAP_se=$(printf "\e[0m")              # stop standout
+export LESS_TERMCAP_ue=$(printf "\e[0m")              # stop underline
+
+#---[autoload]-----------------------------------------------------------------
+autoload -U compinit && compinit
+autoload -U colors && colors
+
+#---[case insensitive completion]--------------------------------------------
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 #####################
 ###### ANTIGEN ######
@@ -36,21 +57,11 @@ antigen bundle adb
 antigen bundle sudo
 antigen bundle colored-man-pages
 antigen bundle command-not-found
-
-# Completions not yet implemented into ZSH stable
+antigen bundle subnixr/minimal
 antigen bundle zsh-users/zsh-completions
-
-# `zsh pure` prompt. load order matters
-antigen bundle mafredri/zsh-async
-#antigen bundle sindresorhus/pure ### original version
-antigen bundle tkonolige/pure ### nice fork with basic symbols
-
-# Syntax highlighting bundle. Must load last!
+antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Tell antigen that you're done.
 antigen apply
 
 # Aliases
 source $HOME/.aliases
-

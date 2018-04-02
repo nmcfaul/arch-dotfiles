@@ -6,19 +6,14 @@ include-file = $HOME/.config/polybar/modules.conf
 inherit = bar/master
 monitor = ${env:MONITOR:HDMI-0}
 
-; modules-left = menu redshift caffeine i3-workspaces weather
-; modules-center = music2
-; modules-right = pkg memory temp cpu eth volume1 time rofi
-modules-left = i3-workspaces xwindow
-modules-center = clock
-modules-right = pkg volume network powermenu
-
-tray-position = right
+modules-left = menu i3-workspaces
+modules-center =
+modules-right = updates wired-network wireless-network volume clock powermenu
 
 [bar/right]
 inherit = bar/master
 monitor = ${env:MONITOR:DVI-I-1}
 
-modules-left = i3-workspaces xwindow
+modules-left = i3-workspaces
 modules-center =
-modules-right = time
+modules-right =
